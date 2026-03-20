@@ -1,2 +1,0 @@
-sync.cloud-endpoint.net
-cdn.cloud-endpoint.net
