@@ -1,1 +1,2 @@
-// Initial access hunting query placeholder
+sync.cloud-endpoint.net
+cdn.cloud-endpoint.net
