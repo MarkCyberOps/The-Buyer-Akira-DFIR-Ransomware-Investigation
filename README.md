@@ -1,4 +1,4 @@
-# The Buyer – Akira Ransomware Investigation
+# The Buyer – Akira DFIR Ransomware Investigation
 
 ## Overview
 
@@ -121,3 +121,50 @@ The attacker re-entered the environment using pre-staged access and executed a m
 Ransomware: e609d070ee9f76934d73353be4ef7ff34b3ecc3a2d1e5d052140ed4cb9e4752b
 
 Staging Tool: 512a1f4ed9f512572608c729a2b89f44ea66a40433073aedcd914bd2d33b7015
+
+---
+
+## MITRE ATT&CK Mapping
+
+| Tactic | Technique |
+|--------|----------|
+| Initial Access | T1078 |
+| Execution | T1059 |
+| Credential Access | T1003 |
+| Lateral Movement | T1021 |
+| Command & Control | T1105 |
+| Exfiltration | T1560 |
+| Impact | T1486 |
+| Defense Evasion | T1562 |
+| Recovery Prevention | T1490 |
+
+---
+
+## Detection Strategy
+
+Detection logic is based on behavioral indicators:
+
+- Execution from ProgramData directory
+- Archive creation by non-standard binaries
+- PowerShell download activity
+- Shadow copy deletion
+- LSASS access attempts
+
+KQL queries are provided in the detection directory.
+
+---
+
+## Key Takeaways
+
+- Attackers leveraged legitimate tools for stealth
+- PowerShell was heavily used for payload delivery
+- Data exfiltration occurred before encryption
+- Anti-forensics techniques attempted to remove evidence
+- Effective detection requires behavioral correlation
+
+---
+
+## Author
+
+Mark Tuazon  
+Cybersecurity | Threat Hunting | DFIR
